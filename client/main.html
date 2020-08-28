@@ -18,7 +18,10 @@
 
 <body>
 {{>navbar}}
+
 {{>map}}
+{{>button}}
+
 
 
 </body>
@@ -26,7 +29,7 @@
 <template name="navbar">
 
     <nav>
-        <div class="nav-wrapper teal lighten-2">
+        <div class="nav-wrapper black z-depth-5">
             <a href="#" class="brand-logo center"><i class="material-icons">local_drink</i></a>
 
         </div>
@@ -37,8 +40,12 @@
 
 <template name="map">
 
-    <div id="mapid"></div>
-<script>
+
+
+    <div id="mapid" class="col s12"></div>
+
+
+    <script>
 
     var mymap = L.map('mapid').setView([39.50, -98.35], 13)
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -51,5 +58,16 @@
     }).addTo(mymap)
 
 </script>
+</template>
+
+<template name="button">
+<div class= "container ">
+
+    <a  id="randomizeBtn" class="waves-effect waves-light btn-large pulse  ">Find random Brewery!</a>
+
+
+</div>
+
+
 </template>
 

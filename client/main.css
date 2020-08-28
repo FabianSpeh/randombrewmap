@@ -1,5 +1,6 @@
 body {
-  padding: 10px;
+  padding: 0;
+  margin: 0;
   font-family: sans-serif;
 
 }
@@ -11,15 +12,56 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 
 }
 
-#mapid{height:843px;
+
+nav .nav-wrapper{
+
+  position:absolute;
+  height:100%;
+  width:100%;
+  z-index:1;
+
+}
+
+.a{
+
+  position:relative;
+  z-index:0;
+
+}
+
+#randomizeBtn{
+  position:fixed;
+ width:20%;
+  margin-left:23.5%;
+  margin-right:30%;
+  bottom:50px;
 
 
 
 }
 
+.leaflet-top{
+  top:80px !important;
+}
+
+
+
+
+#mapid{
+position:absolute;
+  top: 0;
+  bottom: 0;
+  height:100%;
+  width:100%;
+  z-index:0;
+
+}
+
+
 html, body{
 
   height:100%;
+  width:100%;
 
 }
 
