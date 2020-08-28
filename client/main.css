@@ -1,4 +1,25 @@
 body {
   padding: 10px;
   font-family: sans-serif;
+
 }
+
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
+
+  font-size:60px;
+
+}
+
+#mapid{height:843px;
+
+
+
+}
+
+html, body{
+
+  height:100%;
+
+}
+
