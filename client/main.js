@@ -1,5 +1,4 @@
 import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 var randomUrl = "https://www.random.org/integers/?num=1&min=1&max=8033&col=1&base=10&format=plain&rnd=new";
@@ -8,7 +7,7 @@ var mapUrl ="https://api.mapbox.com/geocoding/v5/mapbox.places/"
 const mapBoxApiKey = "access_token=pk.eyJ1Ijoic2hhZGl1eDI3IiwiYSI6ImNrZWVvYjV3bjBpcWsyd250dHpweXMwMXMifQ.s6JgdRCtR44ksGe3b4gVeQ";
 var streetViewUrl = "https://maps.googleapis.com/maps/api/streetview?location="
 var streetViewApiKey = "&key=AIzaSyCluzv5P8PZKny4nJGpPt_i0G20xY5Zre8";
-var streetViewOpt = "&size=456x456";
+var streetViewOpt = "&size=400x400";
 
 const getRandomNumber = async () => {
 
@@ -16,6 +15,7 @@ const getRandomNumber = async () => {
    const randomNumber = await response.text();
 console.log(randomNumber);
      await getBrewery(randomNumber);
+
 
 
 
@@ -61,6 +61,7 @@ mymap.panTo(cordArray)
     ;
   const marker=   L.marker(cordArray,{icon:redIcon}).addTo(mymap);
     var pointOffset = L.point(2.5, -42);
+    var pointOffset2 = L.point(0,100);
 
     marker.bindTooltip(name,{direction:"top", offset:pointOffset, permanent:true}).openTooltip();
 
@@ -70,7 +71,9 @@ mymap.panTo(cordArray)
     var popupImg = document.getElementById("streetView");
     popupImg.src=combinedUrlg;
     console.log(combinedUrlg);
-    marker.bindPopup("<img src=" + "'" +combinedUrlg +"'" +"/>", {maxHeight: 500, maxWidth: 500});
+
+
+    marker.bindPopup("<img src=" + "'" +combinedUrlg +"'" +"/>", {maxHeight: 500, maxWidth: 500, offset:pointOffset2});
     console.log(popupImg.src);
 
 
@@ -91,6 +94,18 @@ const getStreetViewImage = async (latitude, longitude) => {
 
 Template.map.onCreated(function mapOnCreated() {
 
-    getRandomNumber();
+
 
 });
+
+Template.button.events({
+    'click button'(event,instance){
+        getRandomNumber();
+        document.getElementsByClassName('pulse')[0].style.overflow ="hidden";
+
+
+
+    }
+
+
+})

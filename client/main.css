@@ -15,7 +15,7 @@ html, body{
 
 nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 
-  font-size:50px !important;
+  font-size:40px !important;
 
 }
 
@@ -33,6 +33,8 @@ nav .nav-wrapper{
 #title{
 
   color:white;
+  font-size:40px;
+  text-decoration: underline white;
 
 }
 
@@ -40,6 +42,10 @@ nav .nav-wrapper{
 
 
 
+}
+#modal1{
+
+  z-index:-10;
 }
 
 .a{
@@ -65,16 +71,34 @@ margin:0 auto;
   display:inline-block;
 
   width:auto;
-  color:black;
-  font-size:19px;
+  color:white;
+  font-size:30px;
   top:90%;
-  right:42.5%;
+  right:40%;
   height:auto;
+  background-color: #494949 !important;
 
 
 
 
 }
+
+.leaflet-popup-content-wrapper{
+
+  background: #a4a4a4!important;
+}
+
+a.leaflet-popup-close-button{
+
+  color:black !important;
+  font: 20px/10px Tahoma, Verdana, sans-serif !important
+}
+
+
+
+
+
+
 
 .btn-block{
 
@@ -93,7 +117,10 @@ margin:0 auto;
  font: 20px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif !important;
 }
 
+.material-icons{
 
+  position:fixed;
+}
 
 
 #mapid{
