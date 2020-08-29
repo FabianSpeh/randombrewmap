@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: alata;
 
 }
 
@@ -19,6 +19,19 @@ nav .nav-wrapper{
   height:100%;
   width:100%;
   z-index:1;
+
+
+}
+
+#title{
+
+  color:white;
+
+}
+
+#gitIcon{
+
+
 
 }
 
@@ -40,13 +53,19 @@ margin:0 auto;
   top:775px;
   width:25%;
   color:black;
-  border: 2px solid black;
+  font-size:19px
+
 
 
 }
 
 .leaflet-top{
   top:80px !important;
+}
+
+.leaflet-container{
+
+ font: 20px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif !important;
 }
 
 

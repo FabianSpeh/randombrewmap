@@ -1,6 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -18,7 +19,6 @@
 
 <body>
 {{>navbar}}
-
 {{>map}}
 {{>button}}
 
@@ -29,9 +29,12 @@
 <template name="navbar">
 
     <nav>
-        <div class="nav-wrapper grey darken-1 z-depth-5">
-            <a href="#" class="brand-logo center">RandomBrewMap</a>
-
+        <div class="nav-wrapper grey darken-1  z-depth-5">
+            <a href="#" id="title" class="brand-logo center">RandomBrewMap</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="sass.html"><i class="material-icons left">info</i></a></li>
+                <li><a id="gitIcon" href="badges.html"></a></li>
+            </ul>
         </div>
     </nav>
 
@@ -57,13 +60,23 @@
         accessToken: 'pk.eyJ1Ijoic2hhZGl1eDI3IiwiYSI6ImNrZWVvYjV3bjBpcWsyd250dHpweXMwMXMifQ.s6JgdRCtR44ksGe3b4gVeQ'
     }).addTo(mymap)
 
+    var redIcon = new L.Icon({
+        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [30, 50],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [50, 50]
+    });
+
+
 </script>
 </template>
 
 <template name="button">
 <div class= "container ">
 
-    <a  id="randomizeBtn" class="waves-effect waves-light btn-large pulse white z-depth-3 ">Find random Brewery!</a>
+    <a  id="randomizeBtn" class="waves-effect waves-light btn-large pulse blue-grey lighten-2 z-depth-3 ">Find random Brewery!</a>
 
 
 </div>
