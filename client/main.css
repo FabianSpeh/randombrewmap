@@ -4,6 +4,13 @@ body {
   font-family: alata;
 
 }
+html, body{
+
+  height:100%;
+  width:100%;
+  position:relative;
+
+}
 
 
 nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
@@ -37,26 +44,44 @@ nav .nav-wrapper{
 
 .a{
 
-  position:relative;
+  position:absolute;
   z-index:0;
 
 }
 
+#buttonParent{
+
+  position:relative;
+
+}
 #randomizeBtn{
 
  /*width:20%;
   margin-left:23.5%;
   margin-right:30%;
  */
+position:fixed;
 margin:0 auto;
-  display:block;
-  top:775px;
-  width:25%;
+  display:inline-block;
+
+  width:auto;
   color:black;
-  font-size:19px
+  font-size:19px;
+  top:90%;
+  right:42.5%;
+  height:auto;
 
 
 
+
+}
+
+.btn-block{
+
+  width:100%;
+}
+.row{
+  position:relative;
 }
 
 .leaflet-top{
@@ -82,10 +107,5 @@ position:absolute;
 }
 
 
-html, body{
 
-  height:100%;
-  width:100%;
-
-}
 

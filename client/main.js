@@ -45,7 +45,7 @@ await getCoordinates(location,name);
 const getCoordinates = async (location,name) => {
 
     const combinedUrl = mapUrl + location + mapBoxApiKey;
-    const response = await fetch(combinedUrl)
+    const response = await fetch(combinedUrl);
     const data = await response.json();
     console.log(data);
 
@@ -62,18 +62,27 @@ mymap.panTo(cordArray)
   const marker=   L.marker(cordArray,{icon:redIcon}).addTo(mymap);
     var pointOffset = L.point(2.5, -42);
 
-
     marker.bindTooltip(name,{direction:"top", offset:pointOffset, permanent:true}).openTooltip();
 
-    marker.bindPopup("dude")
-    getStreetViewImage(latitude,longitude);
+    const latLong = latitude +"," + longitude;
+    const combinedUrlg = streetViewUrl + latLong + streetViewOpt + streetViewApiKey;
+
+    var popupImg = document.getElementById("streetView");
+    popupImg.src=combinedUrlg;
+    console.log(combinedUrlg);
+    marker.bindPopup("<img src=" + "'" +combinedUrlg +"'" +"/>", {maxHeight: 500, maxWidth: 500});
+    console.log(popupImg.src);
+
+
 
 }
 const getStreetViewImage = async (latitude, longitude) => {
 
-    const latLong = latitude +"," + longitude;
-   const combinedUrl = streetViewUrl + latLong + streetViewOpt + streetViewApiKey;
+
    console.log(combinedUrl);
+   const response = await fetch(combinedUrl);
+   console.log(response);
+
 
 
 }
