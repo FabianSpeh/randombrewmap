@@ -8,6 +8,7 @@ const mapBoxApiKey = "access_token=pk.eyJ1Ijoic2hhZGl1eDI3IiwiYSI6ImNrZWVvYjV3bj
 var streetViewUrl = "https://maps.googleapis.com/maps/api/streetview?location="
 var streetViewApiKey = "&key=AIzaSyCluzv5P8PZKny4nJGpPt_i0G20xY5Zre8";
 var streetViewOpt = "&size=400x400";
+var popup;
 
 const getRandomNumber = async () => {
 
@@ -56,12 +57,13 @@ const getCoordinates = async (location,name) => {
 
 
 const cordArray = [latitude, longitude];
-mymap.panTo(cordArray)
+mymap.flyTo(cordArray)
+
 
     ;
   const marker=   L.marker(cordArray,{icon:redIcon}).addTo(mymap);
     var pointOffset = L.point(2.5, -42);
-    var pointOffset2 = L.point(0,100);
+    var pointOffset2 = L.point(0,250);
 
     marker.bindTooltip(name,{direction:"top", offset:pointOffset, permanent:true}).openTooltip();
 

@@ -17,6 +17,7 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
 
   font-size:40px !important;
 
+
 }
 
 
@@ -28,13 +29,15 @@ nav .nav-wrapper{
   z-index:1;
 
 
+
+
 }
 
 #title{
 
   color:white;
   font-size:40px;
-  text-decoration: underline white;
+
 
 }
 
@@ -77,10 +80,13 @@ position:fixed;
   margin-right:auto;
   margin-left:auto;
   right:32.5vw;
+  border-radius:12px;
+  border:2px solid white;
+
 
 
   height:auto;
-  background-color: #494949 !important;
+  background-color:#222222 !important;
 
 
 
@@ -89,18 +95,24 @@ position:fixed;
 
 .leaflet-popup-content-wrapper{
 
-  background: #a4a4a4!important;
+  background: #494949!important;
 }
 
 a.leaflet-popup-close-button{
 
-  color:black !important;
-  font: 20px/10px Tahoma, Verdana, sans-serif !important
+ color:#ffffff!important;
+  font: 20px/10px Tahoma, Verdana, sans-serif !important;
+  background-color:#494949!important;
+
 }
 
 
 
+#navbar{
 
+  background-color:#747474!important;
+
+}
 
 
 
