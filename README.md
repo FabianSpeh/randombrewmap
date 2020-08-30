@@ -15,6 +15,7 @@ These Coordinates will be used to center the map on the specific position and pl
 Lastly,the coordinates will also be fed into the [Google Maps Street View Static API](https://developers.google.com/maps/documentation/streetview/overview), which will generate an image (if available) of the inside of the building or the surroundings(depending on whats available). 
 The image is inside a popup, which is bound to a marker, which can be accessed by clicking on the marker.
 
+---
 ## Installation instructions
 
 #### Getting Started
@@ -59,14 +60,14 @@ You will need these pieces of software installed on your system
 
 **Windows**: Run the command `choco install meteor` in your Powershell
 
-
+---
 ### Get it up and Running
 
 1. First you have to set up Git globally by running `git config --global user.name "Fabian Speh"` and `git config --global user.email "fabian.speh@mni.thm.de"` in your Terminal/Powershell. exchanging it with your own credentials.
 2. Change directories to an empty repository and run the command `git clone https://git.thm.de/fsph90/randombrewmap.git`
 3. Change into the directory you just cloned and run `meteor`. If you get an error that a module is missing you might have to run `meteor npm install --save @babel/runtime`
 4. If you followed all the steps correctly until now, the app should now be running on [http://localhost:3000/](http://localhost:3000/)!
-
+---
 ## How to use
 
 1. Hit the "FIND RANDOM BREWERY!" Button to pan to a randomly selected Brewery.
