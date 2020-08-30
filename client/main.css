@@ -67,14 +67,18 @@ nav .nav-wrapper{
   margin-right:30%;
  */
 position:fixed;
-margin:0 auto;
+
   display:inline-block;
 
-  width:auto;
+  width:40vw;
   color:white;
   font-size:30px;
   top:90%;
-  right:40%;
+  margin-right:auto;
+  margin-left:auto;
+  right:29vw;
+
+
   height:auto;
   background-color: #494949 !important;
 
