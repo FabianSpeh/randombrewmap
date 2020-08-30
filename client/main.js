@@ -8,13 +8,13 @@ const mapBoxApiKey = "access_token=pk.eyJ1Ijoic2hhZGl1eDI3IiwiYSI6ImNrZWVvYjV3bj
 var streetViewUrl = "https://maps.googleapis.com/maps/api/streetview?location="
 var streetViewApiKey = "&key=AIzaSyCluzv5P8PZKny4nJGpPt_i0G20xY5Zre8";
 var streetViewOpt = "&size=400x400";
-var popup;
+
 
 const getRandomNumber = async () => {
 
     const response = await fetch(randomUrl);
    const randomNumber = await response.text();
-console.log(randomNumber);
+
      await getBrewery(randomNumber);
 
 
@@ -32,8 +32,6 @@ const data = await response.json();
 
 const location = data.street + " " + data.city +".json?";
 const name = data.name;
-console.log(location);
-console.log(name);
 
 await getCoordinates(location,name);
 
@@ -48,12 +46,10 @@ const getCoordinates = async (location,name) => {
     const combinedUrl = mapUrl + location + mapBoxApiKey;
     const response = await fetch(combinedUrl);
     const data = await response.json();
-    console.log(data);
+
 
     const longitude = data.features[0].center[0];
     const latitude = data.features[0].center[1];
-    console.log(latitude);
-    console.log(longitude);
 
 
 const cordArray = [latitude, longitude];
@@ -72,11 +68,11 @@ mymap.flyTo(cordArray)
 
     var popupImg = document.getElementById("streetView");
     popupImg.src=combinedUrlg;
-    console.log(combinedUrlg);
 
 
-    marker.bindPopup("<img src=" + "'" +combinedUrlg +"'" +"/>", {maxHeight: 500, maxWidth: 500, offset:pointOffset2});
-    console.log(popupImg.src);
+
+    marker.bindPopup("<img src=" + "'" +combinedUrlg +"'" +"alt='Google Streetview Image'" +"/>", {maxHeight: 500, maxWidth: 500, offset:pointOffset2});
+
 
 
 
@@ -84,9 +80,9 @@ mymap.flyTo(cordArray)
 const getStreetViewImage = async (latitude, longitude) => {
 
 
-   console.log(combinedUrl);
+
    const response = await fetch(combinedUrl);
-   console.log(response);
+
 
 
 
@@ -96,7 +92,10 @@ const getStreetViewImage = async (latitude, longitude) => {
 
 Template.map.onCreated(function mapOnCreated() {
 
-
+var html = document.getElementsByTagName("html")[0];
+var att = document.createAttribute("lang");
+att.value="en";
+html.setAttributeNode(att);
 
 });
 
