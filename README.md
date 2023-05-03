@@ -1,5 +1,9 @@
 # RandomBrewMap
 
+## Important Information
+
+App is not working properly anymore, due to API Licenses running out.
+
 ## Description of the App
 
 With **RandomBrewApp**, you're able to locate a random brewery in the world in a matter of seconds with the click of one Button!
